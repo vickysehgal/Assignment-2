@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>2. Random Number Generator with Delay and Progress Indication:</h2>
+
+    <!-- The goal of this program is to generate a random number after a delay of 3
+    seconds, and store the delay in a variable so can be modified. The program
+    displays a message every second indicating the time remaining until the
+    random number is generated and then outputs the generated number. -->
+
+    
+
+    <script>
+      // Set the delay in seconds
+      let delayInSeconds = 3;
+
+      // Define the function to generate a random number after a delay
+      function generateRandomNumberWithDelay(delay) {
+        // Display a countdown message every second until the delay is over
+        let countdownInterval = setInterval(function () {
+          console.log("Generating random number in " + delay + " seconds...");
+          delay--;
+          if (delay === 0) {
+            clearInterval(countdownInterval);
+            let randomNumber = Math.floor(Math.random() * 100) + 1;
+            console.log("Random number generated: " + randomNumber);
+          }
+        }, 1000);
+      }
+
+      // Call the function with the specified delay
+      generateRandomNumberWithDelay(delayInSeconds);
+    </script>
+  </body>
+</html>

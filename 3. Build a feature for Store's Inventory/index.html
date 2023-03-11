@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Build a feature for Store's Inventory.</h2>
+
+    <!-- Suppose a store has a list of items and their prices in US Dollars stored as
+    an object. Create a JavaScript program to convert the prices to Indian
+    Rupees using an exchange rate of 1 USD to 80 INR. The program should use the
+    map higher-order function to create a new object with the converted prices
+    in Rupees. -->
+
+    <script>
+      const storeItems = {
+        apple: 1.99,
+        banana: 2,
+        orange: 3.99,
+        grape: 3,
+      };
+
+      const exchangeRate = 80;
+
+      const storeItemsInRupees = Object.entries(storeItems).map(
+        ([itemName, price]) => {
+          return [itemName, price * exchangeRate];
+        }
+      );
+
+      const storeItemsInRupeesObj = Object.fromEntries(storeItemsInRupees);
+
+      console.log(storeItemsInRupeesObj);
+    </script>
+  </body>
+</html>

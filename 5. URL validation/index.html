@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>URL validation.</h2>
+
+    <!-- Write a program using a regex that matches valid URLs. Valid URLs should
+    start with either http:// or https://, followed by one or more letters,
+    digits, or special characters, followed by a dot, followed by one or more
+    letters. Print a message indicating if the input matches the conditions or
+    not. -->
+
+    <script>
+      const urlRegex = /^(http:\/\/|https:\/\/)[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=]+[a-zA-Z]+$/;  //  here this is regular expression / / these two  sign indicates regular expression
+      
+
+      const url1 = "http://www.example.com";
+      const url2 = "https://www.example.com/path?query=123";
+      const url3 = "ftp://www.example.com"; // invalid URL
+
+      if (urlRegex.test(url1)) {
+        console.log(`${url1} is a valid URL`);
+      } else {
+        console.log(`${url1} is not a valid URL`);
+      }
+
+      if (urlRegex.test(url2)) {
+        console.log(`${url2} is a valid URL`);
+      } else {
+        console.log(`${url2} is not a valid URL`);
+      }
+
+      if (urlRegex.test(url3)) {
+        console.log(`${url3} is a valid URL`);
+      } else {
+        console.log(`${url3} is not a valid URL`);
+      }
+    </script>
+  </body>
+</html>

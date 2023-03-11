@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>6. LinkedIn Profile URL Validator</h2>
+
+    <!-- As a developer, you want to create a program that validates LinkedIn profile
+    URLs to ensure that they are formatted correctly and contain only valid
+    characters. Valid LinkedIn profile URLs should start with https://
+    www.linkedin.com/in/ followed by a combination of one or more letters,
+    digits, underscores, or hyphens, and end with a letter or digit. The length
+    of the profile ID should be between 5 and 30 characters. The program should
+    use a regular expression to match valid LinkedIn profile URLs, and should
+    not match URLs that do not follow this format or contain invalid characters.
+    The program should provide clear output messages indicating whether each
+    input is a valid LinkedIn profile URL or not. -->
+
+    <script>
+      const regex =
+        /^https:\/\/www\.linkedin\.com\/in\/[a-zA-Z0-9_-]{5,30}[a-zA-Z0-9]$/;
+
+      function validateLinkedInUrl(url) {
+        if (regex.test(url)) {
+          console.log(`${url} is a valid LinkedIn profile URL`);
+        } else {
+          console.log(`${url} is not a valid LinkedIn profile URL`);
+        }
+      }
+
+      // Example usage:
+      validateLinkedInUrl("https://www.linkedin.com/in/john-doe_123");  // valid url
+      validateLinkedInUrl("https://www.linkedin.com/in/jane_doe");   // valid url
+      validateLinkedInUrl("https://www.linkedin.com/in/jo");   // not valid url
+      validateLinkedInUrl("https://www.linkedin.com/in/john.doe");  // not valid url
+      validateLinkedInUrl("https://www.linkedin.com/in/verylongusername12345678901234567890");  // not valid url
+
+    </script>
+  </body>
+</html>
